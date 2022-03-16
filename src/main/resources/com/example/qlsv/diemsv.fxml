@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="607.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlsv.DiemsvController">
+    <children>
+        <GridPane layoutX="3.0" layoutY="134.0" prefHeight="538.0" prefWidth="926.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="220.60001220703126" minHeight="10.0" prefHeight="74.40001220703125" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="443.99998779296874" minHeight="10.0" prefHeight="443.99998779296874" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="diemTable" prefHeight="444.0" prefWidth="929.0" stylesheets="@../../../../css/fullpackstyling.css" GridPane.rowIndex="1">
+                    <columns>
+                        <TableColumn fx:id="msvTb" prefWidth="71.19998478889465" text="MSV" />
+                        <TableColumn fx:id="hoTenTb" prefWidth="229.59996032714844" text="Họ Tên" />
+                        <TableColumn fx:id="monTb" minWidth="9.60003662109375" prefWidth="120.0" text="Môn" />
+                        <TableColumn fx:id="diemTb" minWidth="0.0" prefWidth="152.0" text="Điểm" />
+
+                    </columns>
+                </TableView>
+                <HBox prefHeight="56.0" prefWidth="720.0" spacing="10.0">
+                    <children>
+                        <MaterialIconView glyphName="SEARCH" size="35" wrappingWidth="31.20001220703125" />
+                        <TextField fx:id="search" prefHeight="40.0" prefWidth="294.0" />
+                        <Button fx:id="addDiem" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="39.0" prefWidth="129.0" stylesheets="@../../../../css/fullpackstyling.css" text="Nhập điểm" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+                            </graphic>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </Button>
+                  <Button fx:id="updateDiem" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Update" prefHeight="39.0" prefWidth="110.0" stylesheets="@../../../../css/fullpackstyling.css" text="Cập nhật" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="EDIT" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="deleteDiem" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#Delete" prefHeight="39.0" prefWidth="73.0" stylesheets="@../../../../css/fullpackstyling.css" text="Xóa" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Button>
+                        <Button fx:id="dash51" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="465.0" layoutY="10.0" mnemonicParsing="false" onAction="#exportFile" prefHeight="39.0" prefWidth="105.0" stylesheets="@../../../../css/fullpackstyling.css" text="Xuất File" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="FILE" />
+                            </graphic>
+                        </Button>
+                        <Button fx:id="dash511" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#readFile" prefHeight="39.0" prefWidth="105.0" stylesheets="@../../../../css/fullpackstyling.css" text="Đọc File" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="FILE" />
+                            </graphic>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets top="25.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </GridPane>
+        <Pane prefHeight="115.0" prefWidth="929.0" style="-fx-background-color: #3F2B63;">
+            <children>
+                <Label layoutX="285.0" layoutY="31.0" text="QUẢN LÝ ĐIỂM SINH VIÊN" textFill="WHITE">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

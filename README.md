@@ -1,1 +1,2 @@
-# quanlysinhvien_simple_java
+Nguyễn Đình Tuấn Anh
+Chu Ngọc Khánh
